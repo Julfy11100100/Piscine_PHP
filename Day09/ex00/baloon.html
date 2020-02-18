@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex00</title>
+    <style>
+        #id_boll {
+            border-radius: 50%;
+        }
+    </style>
+    <script type="text/javascript">
+        var div;
+        var size;
+        var k;
+
+        window.onload=function(){
+            div = document.getElementById("id_boll");
+            div.addEventListener("click", func1);
+            div.addEventListener("mouseout", func2);
+            div.style.background = "red";
+            div.style.width = 200 + "px";
+            div.style.height = 200 + "px";
+        }
+        function func1() {
+            size = parseInt(div.style.width) + 10;
+            div.style.width = size + "px";
+            div.style.height = size + "px";
+            if (div.style.width > 420 + "px")
+            {
+                div.style.width = 200 + "px";
+                div.style.height = 200 + "px";
+                this.style.background = "blue";
+            }
+
+            if (this.style.background == "red")
+            {
+                this.style.background = "green";
+            }
+            else if (this.style.background == "green")
+            {
+                this.style.background = "blue";
+                 
+            }
+            else if (this.style.background == "blue")
+            {
+                this.style.background = "red";
+            }
+        }
+
+        function func2() {
+            if (div.style.width >= 205 + "px")
+            {
+                k = parseInt(div.style.width);
+                k = k - 5;
+                div.style.width =  k + "px";
+                div.style.height = k + "px";
+                if (this.style.background == "red")
+                {
+                    this.style.background = "blue";
+                }
+                else if (this.style.background == "blue")
+                {
+                    this.style.background = "green";
+
+                }
+                else if (this.style.background == "green")
+                {
+                    this.style.background = "red";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="id_boll">
+
+    </div>
+</body>
+</html>

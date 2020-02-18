@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01</title>
+    <script type="text/javascript">
+
+
+        window.onload=function(){
+            let timerId = setInterval(() => alert("Please, use me..."), 30000);
+        }
+
+        function getResult()
+        {
+            var num1;
+            var num2;
+            var oper;
+            var result;
+
+            num1 = document.getElementById('n1').value;
+            num2 = document.getElementById('n2').value;
+            if ( /\D/.test(num1) || /\D/.test(num2))
+                return alert("Error :(");
+            num1 = parseInt(num1);
+            num2 = parseInt(num2);
+            oper = document.getElementById('operation').value;
+            if (isNaN(num1) || isNaN(num2) || num1 < 0 || num2 < 0 || !oper)
+                return alert("Error :(");
+            if (oper == 1)
+            {
+                result = num1 + num2;
+                console.log(result);
+                return alert(result);
+            }
+            else if (oper == 2)
+            {
+                result = num1 - num2;
+                console.log(result);
+                return alert(result);
+            }
+            else if (oper == 3)
+            {
+                result = num1 * num2;
+                console.log(result);
+                return alert(result);
+            }
+            else if (oper == 4)
+            {   
+                if (num2 == 0)
+                    return alert("It’s over 9000!");
+                result = num1 / num2;
+                console.log(result);
+                return alert(result);
+            }
+            else if (oper == 5)
+            {
+                if (num2 == 0)
+                    return alert("It’s over 9000!");
+                result = num1 % num2;
+                console.log(result);
+                return alert(result);
+            }
+        }
+
+    </script>
+    <style>
+        #form1 {
+            position: absolute;
+            background: pink;
+            width: 500px;
+            height: 150px;
+            left: 30%;
+            top: 30%;
+        }
+        .st1 {
+            font-family: 'Times New Roman', Times, serif;
+            width: 100px;
+            height: 20px;
+        }
+        #p1 {
+            position: absolute;
+            left: 100px;
+            top: 30px;
+        }
+        #p2 {
+            position: absolute;
+            left: 100px;
+            top: 60px;
+
+        }
+        #block1 {
+            left: 300px;
+            top:35px;
+            position: absolute;
+        }
+        #button {
+            position: absolute;
+            left: 340px;
+            top: 60px;
+            height: 30px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1">
+        <p id="p1">Number 1: <input type="text" id="n1" class="st1"></p>
+        <p id="p2">Number 2: <input type="text" id="n2" class="st1"></p>
+        <div id="block1">
+            <select name="select" size="5" id="operation">
+                <option value="1">+</option>
+                <option value="2">-</option>
+                <option value="3">*</option>
+                <option value="4">/</option>
+                <option value="5">%</option>
+            </select>
+        </div>
+        <button onclick="getResult()" id="button">Try me!</button>
+    </form>
+
+</body>
+</html>

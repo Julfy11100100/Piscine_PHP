@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex00</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <style>
+        #id_boll {
+            border-radius: 50%;
+        }
+    </style>
+    <script type="text/javascript">
+        var div;
+        var size;
+        var k;
+
+        window.onload=function(){
+            var color;
+            div = $("#id_boll");
+            div.css("background-color", "red");
+            div.width(200);
+            div.height(200);
+            div.click(function() {
+                size = $(this).width();
+                size += 10;
+                $(this).width(size);
+                $(this).height(size);
+                if ($(this).width() > 420)
+                {
+                    $(this).width(200);
+                    $(this).height(200);
+                    $(this).css("background-color","blue");
+                }
+
+                color = $(this).css("background-color");
+
+                if (color == "rgb(255, 0, 0)" || color == "red")
+                {
+                    $(this).css("background-color","green");
+                }
+                else if (color == "rgb(0, 128, 0)" || color == "green")
+                {
+                    $(this).css("background-color","blue");
+
+                }
+                else if (color == "rgb(0, 0, 255)" || color == "blue")
+                {
+                    $(this).css("background-color","red");
+                }
+            });
+            div.mouseout(function () {
+                var color;
+                if ($(this).width() >= 205)
+                {
+                    k = $(this).width();
+                    k = k - 5;
+                    $(this).width(k);
+                    $(this).height(k);
+                    color = $(this).css("background-color");
+                    if (color == "rgb(255, 0, 0)" || color == "red")
+                    {
+                        $(this).css("background","blue");
+                    }
+                    else if (color == "rgb(0, 0, 255)" || color == "blue")
+                    {
+                        $(this).css("background","green");
+
+                    }
+                    else if (color == "rgb(0, 128, 0)" || color == "green")
+                    {
+                        $(this).css("background","red");
+                    }
+                }
+            });
+
+        }
+    </script>
+</head>
+<body>
+<div id="id_boll">
+
+</div>
+</body>
+</html>

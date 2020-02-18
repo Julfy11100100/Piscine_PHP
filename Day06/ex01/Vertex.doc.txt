@@ -1,0 +1,14 @@
+<- Vertex ----------------------------------------------------------------------
+The Vertex class handles vertex.
+
+Instance contains 3 points and special w:
+NewVert = new Vertex( array( 'x' => 1.0, 'y' => 0.0, 'z' => 0.0, 'color' => $green ) );
+where green - it`s color;
+
+The class provides the following methods :
+
+getX();      setX($v);
+getY();      setY($v);
+getZ();      setZ($v);   
+
+---------------------------------------------------------------------- Vertex ->

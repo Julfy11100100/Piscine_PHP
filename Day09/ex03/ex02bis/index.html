@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ex02</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <style>
+       body {
+            background: bisque;
+       }
+        #header{
+            display: block;
+            padding: 0;
+            margin-left: auto;
+        }
+        #New {
+            padding: 5px;
+            width: 100px;
+            color: white;
+            background: brown;
+        }
+        #ft_list {
+            background: antiquewhite;
+            border: 2px solid brown;
+        }
+       .SPAN {
+           color: green ;
+       }
+    </style>
+</head>
+<body>
+    
+    <div id="header">
+        <input type="button" onclick="newElement()" id="New" value="New">
+        <h3>Список дел: </h3>
+        <div id="ft_list">
+            <div class="task"></div>
+        </div>
+    </div>
+    <script src="todo.js"></script>
+</body>
+</html>

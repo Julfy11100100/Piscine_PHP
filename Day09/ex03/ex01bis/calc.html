@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ex01</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript">
+
+
+        $(document).ready(function() {
+            let timerId = setInterval(() => alert("Please, use me..."), 30000);
+            var oper;
+            $("#operation").change(function () {
+                oper = $(this).children("option:selected").val();
+            });
+            var button = $("#button");
+            button.click(function () {
+                num1 = $('#n1').val();
+                num2 = $('#n2').val();
+                if (/\D/.test(num1) || /\D/.test(num2))
+                    return alert("Error :(");
+                if (isNaN(num1) || isNaN(num2) || num1 < 0 || num2 < 0 || !oper)
+                    return alert("Error :(");
+                if (oper == 1) {
+                    result = parseInt(num1) + parseInt(num2);
+                    console.log(result);
+                    return alert(result);
+                }
+                else if (oper == 2)
+                {
+                    result = parseInt(num1) - parseInt(num2);
+                    console.log(result);
+                    return alert(result);
+                }
+                else if (oper == 3)
+                {
+                    result = parseInt(num1) * parseInt(num2);
+                    console.log(result);
+                    return alert(result);
+                }
+                else if (oper == 4)
+                {
+                    if (parseInt(num2) == 0)
+                        return alert("It’s over 9000!");
+                    result = parseInt(num1) / parseInt(num2);
+                    console.log(result);
+                    return alert(result);
+                }
+                else if (oper == 5)
+                {
+                    if (parseInt(num2) == 0)
+                        return alert("It’s over 9000!");
+                    result = parseInt(num1) % parseInt(num2);
+                    console.log(result);
+                    return alert(result);
+                }
+            });
+        });
+
+
+    </script>
+    <style>
+        #form1 {
+            position: absolute;
+            background: pink;
+            width: 500px;
+            height: 150px;
+            left: 30%;
+            top: 30%;
+        }
+        .st1 {
+            font-family: 'Times New Roman', Times, serif;
+            width: 100px;
+            height: 20px;
+        }
+        #p1 {
+            position: absolute;
+            left: 100px;
+            top: 30px;
+        }
+        #p2 {
+            position: absolute;
+            left: 100px;
+            top: 60px;
+
+        }
+        #block1 {
+            left: 300px;
+            top:35px;
+            position: absolute;
+        }
+        #button {
+            position: absolute;
+            left: 340px;
+            top: 60px;
+            height: 30px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+<form id="form1">
+    <p id="p1">Number 1: <input type="text" id="n1" class="st1"></p>
+    <p id="p2">Number 2: <input type="text" id="n2" class="st1"></p>
+    <div id="block1">
+        <select name="operation" size="5" id="operation">
+            <option value="1">+</option>
+            <option value="2">-</option>
+            <option value="3">*</option>
+            <option value="4">/</option>
+            <option value="5">%</option>
+        </select>
+    </div>
+    <button id="button">Try me!</button>
+</form>
+
+</body>
+</html>
